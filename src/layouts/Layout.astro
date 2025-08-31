@@ -11,13 +11,63 @@ const { title } = Astro.props;
 <html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Upop - Librería moderna de alertas, toasts y confirmaciones" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<!-- Title (SEO) -->
 		<title>{title}</title>
-		<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+		<!-- Meta Description (máx 160 caracteres) -->
+		<meta name="description" content="Upop es una librería moderna de JavaScript para crear alertas, toasts y confirmaciones con diseño atractivo, integración simple y sin dependencias." />
+
+		<!-- Indexación -->
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://upop-alert.vercel.app/" />
+
+		<!-- Keywords (no usadas tanto por Google, pero útiles para otros buscadores) -->
+		<meta name="keywords" content="upop, alertas javascript, librería toasts, confirmaciones js, sweetalert alternativa, notificaciones modernas, frontend UI" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="Upop - Librería de Alertas, Toasts y Confirmaciones en JavaScript" />
+		<meta property="og:description" content="Crea notificaciones modernas con Upop: alertas, toasts y confirmaciones fáciles de usar y sin dependencias." />
+		<meta property="og:image" content="https://upop-alert.vercel.app/preview.png" />
+		<meta property="og:url" content="https://upop-alert.vercel.app/" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Upop - Librería de Alertas y Toasts en JS" />
+		<meta name="twitter:description" content="Librería ligera y moderna para alertas, toasts y confirmaciones en JavaScript. Open source y fácil de integrar." />
+		<meta name="twitter:image" content="https://upop-alert.vercel.app/preview.png" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="/favicon.png" />
+
+		<!-- Fuente -->
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" as="style" />
+		<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
+
+		<!-- CSS Librería -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/upop@1.0.2/dist/upop.css">
+
+		<!-- Schema.org (SoftwareApplication) -->
+		<script type="application/ld+json">
+		{
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		"name": "Upop",
+		"applicationCategory": "DeveloperApplication",
+		"operatingSystem": "All",
+		"softwareVersion": "1.0.2",
+		"url": "https://upop-alert.vercel.app/",
+		"downloadUrl": "https://www.npmjs.com/package/upop",
+		"author": {
+			"@type": "Person",
+			"name": "Luca Tittarelli"
+		}
+		}
+		</script>
 	</head>
+
 	<body class="font-sans bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen">
 		<div class="fixed inset-0 overflow-hidden pointer-events-none">
 			<div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
@@ -40,6 +90,9 @@ const { title } = Astro.props;
 						<a href="#ejemplos" class="text-gray-600 hover:text-blue-600 transition-colors">Ejemplos</a>
 						<a href="#documentacion" class="text-gray-600 hover:text-blue-600 transition-colors">Documentación</a>
 						<a href="#playground" class="text-gray-600 hover:text-blue-600 transition-colors">Playground</a>
+						<a href="https://github.com/Luca-Tittarelli/upop">
+							<svg viewBox="0 0 24 24" aria-hidden="true" class="size-6 fill-slate-900"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.607 9.607 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.92.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.48 3.97-1.32 6.833-5.054 6.833-9.458C22 6.463 17.522 2 12 2Z"></path></svg>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -59,8 +112,10 @@ const { title } = Astro.props;
 						<span class="text-gray-600">upop</span>
 					</div>
 					<div class="flex space-x-6">
-						<a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">GitHub</a>
-						<a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">MIT License</a>
+						<a href="https://github.com/Luca-Tittarelli/upop" class="text-gray-500 hover:text-blue-600 transition-colors flex">
+							GitHub
+							<svg viewBox="0 0 24 24" aria-hidden="true" class="size-6 fill-slate-900"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.607 9.607 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.92.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.48 3.97-1.32 6.833-5.054 6.833-9.458C22 6.463 17.522 2 12 2Z"></path></svg>
+						</a>
 					</div>
 				</div>
 			</div>
